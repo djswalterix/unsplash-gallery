@@ -4,7 +4,7 @@
       type="text"
       v-model="keyword"
       @keyup.enter="searchImages"
-      placeholder="Search Images"
+      placeholder="Search Images ."
     />
   </div>
 </template>
