@@ -6,4 +6,5 @@ export default defineNuxtConfig({
       unsplashAccessKey: process.env.UNSPLASH_ACCESS_KEY,
     },
   },
+  modules: ["@pinia/nuxt"],
 });

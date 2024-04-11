@@ -4,30 +4,27 @@
       type="text"
       v-model="keyword"
       @keyup.enter="searchImages"
-      placeholder="Search Images ."
+      placeholder="Search Images"
     />
+    <button @click="searchImages" :disabled="isLoading">
+      {{ isLoading ? "Loading..." : "Search" }}
+    </button>
   </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
-import { unsplashService } from "~/Services/unsplash";
+import { useImagesStore } from "@/store/images";
+import { storeToRefs } from "pinia";
+const store = useImagesStore();
+const { isLoading } = storeToRefs(store);
 
 const keyword = ref("");
-const isLoading = ref(false);
+
 const emit = defineEmits(["search-completed"]);
 
-const searchImages = async () => {
-  isLoading.value = true;
-  emit("loading", true);
-  try {
-    const result = await unsplashService.searchImages(keyword.value);
-    emit("search-completed", result.results);
-  } catch (err) {
-    console.error("Error during search: ", err);
-  } finally {
-    isLoading.value = false;
-    emit("loading", false);
-  }
-};
+function searchImages() {
+  store.fetchImages(keyword.value);
+  console.log(store.images);
+}
 </script>

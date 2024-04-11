@@ -4,7 +4,7 @@
       @search-completed="handleSearchCompleted"
       @loading="handleLoading"
     />
-    <div v-if="isLoading">Loading...</div>
+
     <ImageList :images="images" />
   </div>
 </template>
