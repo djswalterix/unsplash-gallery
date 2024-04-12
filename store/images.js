@@ -41,5 +41,26 @@ export const useImagesStore = defineStore("images", {
       }
       this.searchPerformed = true;
     },
+    async fetchRandomImages() {
+      this.isLoading = true;
+      const config = useRuntimeConfig();
+      try {
+        const response = await axios.get(
+          `https://api.unsplash.com/photos/random`,
+          {
+            params: {
+              count: 10,
+              client_id: config.public.unsplashAccessKey,
+            },
+          }
+        );
+        //save
+        this.images = response.data;
+      } catch (error) {
+        console.error("Error during image fetch:", error);
+      }
+      this.isLoading = false;
+      this.searchPerformed = true;
+    },
   },
 });

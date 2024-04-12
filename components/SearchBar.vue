@@ -24,7 +24,10 @@ const keyword = ref("");
 const emit = defineEmits(["search-completed"]);
 
 function searchImages() {
-  store.fetchImages(keyword.value);
-  console.log(store.images);
+  if (keyword.value !== "") {
+    store.fetchImages(keyword.value);
+  } else {
+    store.fetchRandomImages();
+  }
 }
 </script>

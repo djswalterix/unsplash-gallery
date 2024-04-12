@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="images && images.length > 0">
+    <div v-if="images && images?.length > 0">
       <div v-for="image in images" :key="image.id">
         <NuxtLink :to="`/imageView?id=${image.id}`">
           <img :src="image.urls.thumb" :alt="image.description" />
