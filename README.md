@@ -1,6 +1,46 @@
-# Nuxt 3 Minimal Starter
+<br />
+<div align="center">
+  <h3 align="center">Unsplash Gallery</h3>
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+  <p align="center">
+    An image searcher from unspash Api
+    <br />
+    <a href="https://github.com/djswalterix/unsplash-gallery"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://unsplash00.netlify.app/">View Demo</a>
+    ·
+    <a href="https://github.com/djswalterix/unsplash-gallery/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/djswalterix/unsplash-gallery/issues">Request Feature</a>
+  </p>
+</div>
+
+## About The Project
+
+![Screenshot](/public/screenshot.png)
+
+## Features
+
+- Search images by keyword
+- Search random images
+- Open image details
+
+### Built With
+
+- Nuxt 3
+- Vue
+- Javascript
+- HTML
+- CSS
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+- Node.js 12.x or higher
+- npm/yarn installed
 
 ## Setup
 
@@ -72,4 +112,14 @@ yarn preview
 bun run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+<!-- CONTACT -->
+
+## Contact
+
+- Instagram: [@walkerhoxha](https://www.instagram.com/walkerhoxha/)
+- LinkedIn: [Walter Hoxha](https://www.linkedin.com/in/walter-hoxha-62112126b/)
+- GitHub: [djswalterix](https://github.com/djswalterix)
+
+Project Link: [https://github.com/djswalterix/unsplah-gallery](https://github.com/djswalterix/unsplah-gallery)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
