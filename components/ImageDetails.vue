@@ -73,6 +73,9 @@ onMounted(() => {
 .detail-item {
   font-size: 20px;
 }
+.detail-label {
+  font-weight: 500;
+}
 .image-details {
   margin: 1rem;
 }
