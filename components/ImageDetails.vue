@@ -54,14 +54,12 @@ const router = useRouter();
 const getImageById = (id) => {
   return store.images.find((image) => image.id === id);
 };
-onMounted(() => {
+onMounted(async () => {
   store.hydrateImagesFromLocalStorage();
   const id = route.query.id;
   image.value = getImageById(id);
   if (!image.value) {
     router.push("/");
-  } else {
-    console.log(image.value);
   }
 });
 </script>

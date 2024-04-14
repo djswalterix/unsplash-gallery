@@ -20,6 +20,8 @@ export const useImagesStore = defineStore("images", {
     },
     // http call
     async fetchImages(keyword) {
+      localStorage.setItem("last_search_keyword", keyword);
+
       this.isLoading = true;
       const cacheKey = `images_${keyword}`;
       const cachedImages = localStorage.getItem(cacheKey);
@@ -43,7 +45,6 @@ export const useImagesStore = defineStore("images", {
           //save
           this.images = response.data.results;
           localStorage.setItem(cacheKey, JSON.stringify(this.images));
-          localStorage.setItem("last_search_keyword", keyword);
         } catch (error) {
           console.error("Error during image fetch:", error);
         }
@@ -52,6 +53,7 @@ export const useImagesStore = defineStore("images", {
       this.searchPerformed = true;
     },
     async fetchRandomImages() {
+      localStorage.setItem("last_search_keyword", "");
       this.isLoading = true;
       const config = useRuntimeConfig();
       try {
