@@ -1,12 +1,13 @@
 <template>
-  <div>
+  <div class="search-bar">
     <input
       type="text"
       v-model="keyword"
       @keyup.enter="searchImages"
       placeholder="Search Images"
+      class="search-input"
     />
-    <button @click="searchImages" :disabled="isLoading">
+    <button @click="searchImages" :disabled="isLoading" class="search-button">
       {{ isLoading ? "Loading..." : "Search" }}
     </button>
   </div>
@@ -31,3 +32,31 @@ function searchImages() {
   }
 }
 </script>
+
+<style scoped>
+.search-bar {
+  display: flex;
+  flex-direction: column;
+}
+.search-button,
+.search-input {
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+}
+.search-button {
+  background-color: #007bff;
+  color: white;
+}
+.search-input {
+  background-color: rgba(222, 222, 222, 0.67);
+}
+@media (min-width: 768px) {
+  .search-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+</style>

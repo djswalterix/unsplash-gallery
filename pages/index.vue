@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1 class="title">The Unspash Gallery!</h1>
     <SearchBar
       @search-completed="handleSearchCompleted"
       @loading="handleLoading"
@@ -24,3 +25,17 @@ const handleSearchCompleted = (searchResults) => {
   images.value = searchResults;
 };
 </script>
+
+<style scoped>
+.title {
+  text-align: center;
+  padding: 20px;
+  font-size: 24px;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 32px;
+  }
+}
+</style>

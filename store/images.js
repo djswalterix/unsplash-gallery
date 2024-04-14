@@ -26,7 +26,7 @@ export const useImagesStore = defineStore("images", {
             {
               params: {
                 query: keyword,
-                per_page: 10,
+                per_page: 12,
                 client_id: config.public.unsplashAccessKey,
               },
             }
@@ -49,7 +49,7 @@ export const useImagesStore = defineStore("images", {
           `https://api.unsplash.com/photos/random`,
           {
             params: {
-              count: 10,
+              count: 12,
               client_id: config.public.unsplashAccessKey,
             },
           }

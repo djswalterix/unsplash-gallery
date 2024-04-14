@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="view">
     <ImageDetails />
-    <button @click="goBack">Back</button>
+    <BackButton />
   </div>
 </template>
 
@@ -17,3 +17,21 @@ function goBack() {
   router.back();
 }
 </script>
+<style scoped>
+.view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+</style>
