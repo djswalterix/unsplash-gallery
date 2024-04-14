@@ -9,11 +9,20 @@ export const useImagesStore = defineStore("images", {
     searchPerformed: false,
   }),
   actions: {
+    //fetch data from cache
+    hydrateImagesFromLocalStorage() {
+      const lastSearchKeyword = localStorage.getItem("last_search_keyword");
+      const cachedImages = localStorage.getItem(`images_${lastSearchKeyword}`);
+      if (cachedImages) {
+        this.images = JSON.parse(cachedImages);
+        console.log(this.images);
+      }
+    },
     // http call
     async fetchImages(keyword) {
       this.isLoading = true;
       const cacheKey = `images_${keyword}`;
-      const cachedImages = sessionStorage.getItem(cacheKey);
+      const cachedImages = localStorage.getItem(cacheKey);
       //check cache
       if (cachedImages) {
         this.images = JSON.parse(cachedImages);
@@ -33,7 +42,8 @@ export const useImagesStore = defineStore("images", {
           );
           //save
           this.images = response.data.results;
-          sessionStorage.setItem(cacheKey, JSON.stringify(this.images));
+          localStorage.setItem(cacheKey, JSON.stringify(this.images));
+          localStorage.setItem("last_search_keyword", keyword);
         } catch (error) {
           console.error("Error during image fetch:", error);
         }

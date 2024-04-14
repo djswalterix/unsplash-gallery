@@ -26,11 +26,15 @@
       </div>
       <div class="detail-item" v-if="image.color">
         <span class="detail-label">Color: </span>
+        <div
+          class="color-watch"
+          :style="{ backgroundColor: image.color }"
+        ></div>
         <span>{{ image.color }}</span>
       </div>
       <div class="detail-item" v-if="image.created_at">
         <span class="detail-label">Created at: </span>
-        <span>{{ image.created_at }}</span>
+        <span>{{ formatReadableDate(image.created_at) }}</span>
       </div>
       <div class="detail-item" v-if="image.description">
         <span class="detail-label">Description: </span>
@@ -43,18 +47,28 @@
 <script setup>
 import { useImagesStore } from "@/store/images";
 const store = useImagesStore();
+const route = useRoute();
+const image = ref(null);
 const router = useRouter();
+
 const getImageById = (id) => {
   return store.images.find((image) => image.id === id);
 };
-
-const urlParams = new URLSearchParams(window.location.search);
-const id = urlParams.get("id");
-const image = getImageById(id);
+onMounted(() => {
+  store.hydrateImagesFromLocalStorage();
+  const id = route.query.id;
+  image.value = getImageById(id);
+  if (!image.value) {
+    router.push("/");
+  } else {
+    console.log(image.value);
+  }
+});
 </script>
 <style scoped>
 .image {
   max-height: 50vh;
+  max-width: 98vw;
 }
 .detail-item {
   font-size: 20px;
@@ -62,6 +76,13 @@ const image = getImageById(id);
 .image-details {
   margin: 1rem;
 }
+.color-watch {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  margin-right: 5px;
+}
+
 @media (min-width: 768px) {
   .image-details {
     display: flex;
