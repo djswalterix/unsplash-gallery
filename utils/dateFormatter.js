@@ -1,5 +1,5 @@
 /**
- * Converte una data ISO 8601 in un formato leggibile.
+ * Converts  a ISO 8601 in un readable.
  */
 export function formatReadableDate(isoDate) {
   const date = new Date(isoDate);

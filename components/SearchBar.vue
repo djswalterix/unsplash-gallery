@@ -22,9 +22,8 @@ const { isLoading } = storeToRefs(store);
 
 const keyword = ref("");
 
-const emit = defineEmits(["search-completed"]);
-
 function searchImages() {
+  /*choose wich api to call */
   if (keyword.value !== "") {
     store.fetchImages(keyword.value);
   } else {

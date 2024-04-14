@@ -5,7 +5,11 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+/*
+simple layout component
+ */
+</script>
 <style scoped>
 .view {
   display: flex;

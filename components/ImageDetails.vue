@@ -54,6 +54,10 @@ const router = useRouter();
 const getImageById = (id) => {
   return store.images.find((image) => image.id === id);
 };
+/*
+mount cache
+check if there are images saved with this id, if not goes back to home
+*/
 onMounted(async () => {
   store.hydrateImagesFromLocalStorage();
   const id = route.query.id;

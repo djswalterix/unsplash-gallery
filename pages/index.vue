@@ -1,10 +1,7 @@
 <template>
   <div>
     <h1 class="title">The Unspash Gallery!</h1>
-    <SearchBar
-      @search-completed="handleSearchCompleted"
-      @loading="handleLoading"
-    />
+    <SearchBar @loading="handleLoading" />
 
     <ImageList :images="images" />
   </div>
@@ -19,10 +16,7 @@ const images = ref([]);
 const isLoading = ref(false);
 
 const handleLoading = (loading) => {
-  isLoading.value = loading;
-};
-const handleSearchCompleted = (searchResults) => {
-  images.value = searchResults;
+  isLoading.value = loading; //loading status
 };
 </script>
 

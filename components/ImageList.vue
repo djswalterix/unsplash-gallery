@@ -19,7 +19,7 @@
 </template>
 
 <script setup>
-import { ref, watch } from "vue";
+/*gir with images*/
 import { useImagesStore } from "@/store/images";
 import { storeToRefs } from "pinia";
 
