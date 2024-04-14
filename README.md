@@ -1,8 +1,24 @@
+<br />
+<div align="center">
+  <h3 align="center">Unsplash Gallery</h3>
+
+  <p align="center">
+    An image searcher from unspash Api
+    <br />
+    <a href="https://github.com/djswalterix/unsplash-gallery"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://unsplash00.netlify.app/">View Demo</a>
+    ·
+    <a href="https://github.com/djswalterix/unsplash-gallery/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/djswalterix/unsplash-gallery/issues">Request Feature</a>
+  </p>
+</div>
+
 ## About The Project
 
 ![Screenshot](/public/screenshot.png)
-
-> An image searcher from unspash Api
 
 ## Features
 
